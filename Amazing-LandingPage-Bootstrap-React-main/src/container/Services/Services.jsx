@@ -9,7 +9,7 @@ import './Services.css';
 const Services = () => {
   return (
     <div id="services" className="d-block pt-md-4">
-      <Headings title="Services" text="At Cancer CoPilot, we offer a range of services to support accurate and timely cancer detection. These services include AI-powered cancer detection, where you can upload your medical images for precise analysis, specialist consultations for expert medical advice, and advanced imaging analysis using state-of-the-art technology for early and accurate diagnosis" />
+      <Headings title="Services" text="At Easy Banner, we provide AI-powered services to simplify your promotional campaigns. Our platform allows you to generate custom banners tailored to specific themes (e.g., Independence Day, New Year), define promotional offers, and maintain brand consistency with color palettes. Additionally, our AI can create engaging, campaign-specific promotional copy and optimize your reach with AI-driven hashtag recommendations, ensuring maximum visibility and effectiveness across digital ads, social media, and web promotions." />
 
       <div className="row">
         {data.ServicesData.map(({ titleone, titletwo , link, itemclass, imgURL }, index) => (

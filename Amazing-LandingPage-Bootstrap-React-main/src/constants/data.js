@@ -19,21 +19,21 @@ const Menu = [
 const ServicesData = [
     {
         titleone: 'AI-Powered',
-        titletwo: 'Cancer Detection',
+        titletwo: 'Banner Generation',
         link: '#',
         itemclass: 'blight',
         imgURL: images.services01,
     },
     {
-        titleone: 'Specialist',
-        titletwo: 'Consultation',
+        titleone: 'Automated Content',
+        titletwo: 'Generation',
         link: '#',
         itemclass: 'bgreen',
         imgURL: images.services02,
     },
     {
-        titleone: 'Advanced Imaging',
-        titletwo: 'Analysis',
+        titleone: 'Hashtag Optimization',
+        titletwo: 'and Strategy',
         link: '#',
         itemclass: 'bdark',
         imgURL: images.services03,
@@ -57,20 +57,16 @@ const ServicesData = [
 
 const WorkingProcess = [
     {
-        title: 'DICOM Viewer',
-        description: 'A specialized viewer for medical imaging (CT scans, MRIs, etc.) that enables healthcare providers to visualize and analyze cancer-related diagnostic images, ensuring accurate assessments and treatment planning.',
+        title: 'Direct Social Media Posting',
+        description: 'Effortlessly expand your brand reach with our new direct social media posting feature. Soon, you wil be able to share AI-generated banners and promotional content across platforms like Facebook, Instagram, Twitter (X), and LinkedIn. Customize your message, add AI-optimized hashtags, and post instantly or schedule for later, all from within our application. This feature will streamline your promotional efforts, ensuring your content reaches the right audience at the right time, maximizing visibility and engagement.',
     },
     {
-        title: 'Insurance & Prior Authorization Management',
-        description: 'Streamlines the process of submitting prior authorizations for cancer treatments and medications. Integrates with insurance portals for tracking claims, benefits usage, and ensuring timely approval of necessary treatments.',
+        title: 'AI Video Generation',
+        description: 'Effortlessly create custom, high-impact videos with Easy Banner AI-driven video generation. Just input your campaign details, and let the AI handle the rest, delivering tailored, professional videos in minutes for any promotional need.',
     },
     {
-        title: 'Medication & Treatment Reminders',
-        description: 'Automates reminders for critical cancer treatments such as medication intake, chemotherapy, radiation, and doctor appointments. It also helps patients celebrate milestones like treatment completion, with notifications and encouragement from their care team.',
-    },
-    {
-        title: 'Knowledge Base',
-        description: 'Provides personalized health tips and mental health support, offering valuable resources for cancer patients to cope with their condition, manage symptoms, and maintain a positive outlook during treatment.',
+        title: 'Multi-Language Support',
+        description: 'Reach global audiences by generating videos and banners in multiple languages with AI-driven translation and localization.',
     }
     
 

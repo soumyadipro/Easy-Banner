@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './UploadPage.css';
 
-
 const ThemeGeneratorPage = () => {
   const [theme, setTheme] = useState('');
   const [showPromo, setShowPromo] = useState('no');
@@ -61,7 +60,7 @@ const ThemeGeneratorPage = () => {
       setError(null);
       try {
         const promises = Array(imageCount).fill().map(() =>
-          axios.get('https://us-central1-telehealth-365911.cloudfunctions.net/dashboarddata/generate_independence_day_banner', {
+          axios.get('https://us-central1-gai-ctooffice.cloudfunctions.net/intelligent-query-search/generate_banner', {
             params: {
               theme,
               show_promo: showPromo,
@@ -77,7 +76,7 @@ const ThemeGeneratorPage = () => {
 
         const responses = await Promise.all(promises);
         const newImages = responses.map(response => response.data.image_urls);
-        console.log("response", newImages);
+        console.log("Generated Images:", newImages);
         setGeneratedImages(newImages);
         setHasGenerated(true);
       } catch (error) {
@@ -96,19 +95,55 @@ const ThemeGeneratorPage = () => {
     generateImages();
   };
 
-  const handleDownload = (imageUrl, index) => {
-    const link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = `generated-image-${index + 1}.${imageFormat}`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async (imageUrl, index) => {
+    try {
+      console.log('Image URL:', imageUrl); // Log the imageUrl for debugging
+
+      // Check if imageUrl is an array and take the first item if so
+      if (Array.isArray(imageUrl)) {
+        imageUrl = imageUrl[0];
+      }
+
+      // Check if imageUrl is a string
+      if (typeof imageUrl !== 'string') {
+        throw new Error('Invalid image URL');
+      }
+
+      // Convert GitHub blob URL to raw content URL if necessary
+      const rawUrl = imageUrl.includes('github.com') 
+        ? imageUrl.replace('github.com', 'raw.githubusercontent.com').replace('/blob', '')
+        : imageUrl;
+      
+      const response = await fetch(rawUrl);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement('a');
+      link.href = url;
+      
+      // Extract file extension from the URL
+      const fileExtension = rawUrl.split('.').pop().split('?')[0];
+      link.download = `generated-image-${index + 1}.${fileExtension}`;
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+      alert(`Failed to download image: ${error.message}. Please try again.`);
+    }
   };
 
   return (
     <div className="theme-generator-page">
-      <h1>Theme-Based Image Generator</h1>
-      <p>Enter a theme and generate customized images</p>
+      <h1>Theme-Based Banner Generator</h1>
+      <p>Enter a theme and generate customized Banner</p>
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label htmlFor="theme">Theme:</label>
@@ -195,7 +230,7 @@ const ThemeGeneratorPage = () => {
           </div>
         )}
         <div className="input-container">
-          <label htmlFor="image-count">Number of Images:</label>
+          <label htmlFor="image-count">Number of Banners:</label>
           <select
             id="image-count"
             value={imageCount}
@@ -232,7 +267,7 @@ const ThemeGeneratorPage = () => {
           </select>
         </div>
         <button type="submit" className="generate-button" disabled={loading}>
-          {loading ? 'Generating...' : (hasGenerated ? 'Regenerate' : 'Generate') + ' Images'}
+          {loading ? 'Generating...' : (hasGenerated ? 'Regenerate' : 'Generate') + ' Banners'}
         </button>
       </form>
       {error && (
@@ -243,8 +278,8 @@ const ThemeGeneratorPage = () => {
       )}
       {generatedImages.length > 0 && (
         <div className="image-container">
-          <h2>Generated Images:</h2>
-          {generatedImages.map((image, index) => (
+          <h2>Generated Banners:</h2>
+          {generatedImages.flat().map((image, index) => (
             <div key={index} className="image-item">
               <img src={image} alt={`Generated theme-based image ${index + 1}`} />
               <button onClick={() => handleDownload(image, index)} className="download-button">
@@ -257,4 +292,5 @@ const ThemeGeneratorPage = () => {
     </div>
   );
 };
+
 export default ThemeGeneratorPage;

@@ -4,7 +4,7 @@ import './Contact.css';
 const Contact = () => {
   return (
     <div classNameName="section-padding">
-      <Headings title="Contact Us" text="Get in Touch: Let's Personalize Your Cancer Journey Together" />
+      <Headings title="Contact Us" text="Get in Touch: Let's Create Impactful Promotions Together" />
 
       <div className="contact" id="quote">
 
@@ -13,7 +13,7 @@ const Contact = () => {
             <form>
               <div class="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                <label className="form-check-label" for="inlineRadio1">Say About your Problems</label>
+                <label className="form-check-label" for="inlineRadio1">Share Your Needs: Let’s Tailor the Perfect Promotional Solution for You</label>
               </div>
               
 
