@@ -1,0 +1,101 @@
+.theme-generator-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.input-container, .radio-container {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.radio-container div {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.generate-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.generate-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.image-container {
+  margin-top: 30px;
+}
+
+.image-item {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.image-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.download-button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.download-button:hover {
+  background-color: #007B9A;
+}
+
+.error-message {
+  background-color: #ffdddd;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.error-message button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
