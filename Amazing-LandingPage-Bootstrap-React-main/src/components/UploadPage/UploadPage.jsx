@@ -229,7 +229,7 @@ const ThemeGeneratorPage = () => {
             />
           </div>
         )}
-        <div className="input-container">
+        {/* <div className="input-container">
           <label htmlFor="image-count">Number of Banners:</label>
           <select
             id="image-count"
@@ -241,7 +241,7 @@ const ThemeGeneratorPage = () => {
             <option value={3}>3</option>
             <option value={4}>4</option>
           </select>
-        </div>
+        </div> */}
         <div className="input-container">
           <label htmlFor="aspect-ratio">Aspect Ratio:</label>
           <select

@@ -81,7 +81,7 @@ const Team = [
         linkedin: '#',
     },
     {
-        name: 'ALyana Vandana',
+        name: 'Alyana Vandana',
         position: 'Software devlopment Engineer',
         info: 'Experienced in multicloud environments with certifications in both AWS and GCP. Skilled in GenAI technologies and proficient in DevOps practices',
         foto: images.team02,
@@ -97,7 +97,7 @@ const Team = [
     {
         name: 'Soumyadip Roy',
         position: 'Associate Engineer',
-        info: '8 months of Experience in GCP cloud environments with certifications in both AWS and GCP. Skilled in GenAI technologies',
+        info: 'Experience in GCP cloud environments with certifications in both AWS and GCP. Skilled in GenAI technologies',
         foto: images.team04,
         
     },
